@@ -1,0 +1,9 @@
+Alvo: http://localhost:5000
+
+[1] Injecao SQL em /api/usuarios/buscar                     -> 2 usuarios                          ATAQUE FUNCIONOU
+[2] XSS em /perfil                                          -> payload cru no HTML                 ATAQUE FUNCIONOU
+[3] DELETE /api/usuarios/2 sem credencial                   -> HTTP 200                            ATAQUE FUNCIONOU
+[4] GET /api/relatorio (erro interno)                       -> HTTP 500, detalhe exposto           ATAQUE FUNCIONOU
+[6] Headers de seguranca                                    -> 0/3 presentes                       ATAQUE FUNCIONOU
+
+=== 5 de 6 ataques bem-sucedidos ===

@@ -1,0 +1,121 @@
+2026-09-21 23:35:33,593 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-09-21 23:35:33,593 INFO [33mPress CTRL+C to quit[0m
+2026-09-21 23:35:51,618 ERROR Erro ao consultar usuarios
+Traceback (most recent call last):
+  File "C:\Users\Vinic\AppData\Local\Programs\Python\Python315\Lib\site-packages\mysql\connector\network.py", line 795, in open_connection
+    self.sock.connect(sockaddr)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Vinic\OneDrive\Área de Trabalho\CP  de Codigo\Exercicio 10(Desafio)\app_seguro.py", line 81, in buscar
+    con = db()
+  File "C:\Users\Vinic\OneDrive\Área de Trabalho\CP  de Codigo\Exercicio 10(Desafio)\app_seguro.py", line 31, in db
+    return mysql.connector.connect(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        host=DB_HOST, user=DB_USER, password=DB_PASSWORD, database=DB_NAME
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Vinic\AppData\Local\Programs\Python\Python315\Lib\site-packages\mysql\connector\pooling.py", line 323, in connect
+    return MySQLConnection(*args, **kwargs)
+  File "C:\Users\Vinic\AppData\Local\Programs\Python\Python315\Lib\site-packages\mysql\connector\connection.py", line 185, in __init__
+    self.connect(**kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Vinic\AppData\Local\Programs\Python\Python315\Lib\site-packages\mysql\connector\abstracts.py", line 1604, in connect
+    self._open_connection()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Vinic\AppData\Local\Programs\Python\Python315\Lib\site-packages\mysql\connector\connection.py", line 411, in _open_connection
+    raise err
+  File "C:\Users\Vinic\AppData\Local\Programs\Python\Python315\Lib\site-packages\mysql\connector\connection.py", line 382, in _open_connection
+    self._socket.open_connection()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Vinic\AppData\Local\Programs\Python\Python315\Lib\site-packages\mysql\connector\network.py", line 806, in open_connection
+    raise InterfaceError(
+    ...<2 lines>...
+    ) from err
+mysql.connector.errors.InterfaceError: 2003: Can't connect to MySQL server on 'localhost:3306' (Errno 10061: Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente)
+2026-09-21 23:35:51,628 INFO 127.0.0.1 - - [21/Sep/2026 23:35:51] "[35m[1mGET /api/usuarios/buscar?nome='%20OR%20'1'='1 HTTP/1.1[0m" 500 -
+2026-09-21 23:35:53,687 INFO 127.0.0.1 - - [21/Sep/2026 23:35:53] "GET /perfil?u=<script>alert(1)</script> HTTP/1.1" 200 -
+2026-09-21 23:35:55,735 WARNING Acesso negado (sem credencial) em /api/usuarios/2 de 127.0.0.1
+2026-09-21 23:35:55,736 INFO 127.0.0.1 - - [21/Sep/2026 23:35:55] "[31m[1mDELETE /api/usuarios/2 HTTP/1.1[0m" 401 -
+2026-09-21 23:35:59,828 ERROR Erro ao gerar relatorio
+Traceback (most recent call last):
+  File "C:\Users\Vinic\AppData\Local\Programs\Python\Python315\Lib\site-packages\mysql\connector\network.py", line 795, in open_connection
+    self.sock.connect(sockaddr)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Vinic\OneDrive\Área de Trabalho\CP  de Codigo\Exercicio 10(Desafio)\app_seguro.py", line 127, in relatorio
+    con = db()
+  File "C:\Users\Vinic\OneDrive\Área de Trabalho\CP  de Codigo\Exercicio 10(Desafio)\app_seguro.py", line 31, in db
+    return mysql.connector.connect(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        host=DB_HOST, user=DB_USER, password=DB_PASSWORD, database=DB_NAME
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Vinic\AppData\Local\Programs\Python\Python315\Lib\site-packages\mysql\connector\pooling.py", line 323, in connect
+    return MySQLConnection(*args, **kwargs)
+  File "C:\Users\Vinic\AppData\Local\Programs\Python\Python315\Lib\site-packages\mysql\connector\connection.py", line 185, in __init__
+    self.connect(**kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Vinic\AppData\Local\Programs\Python\Python315\Lib\site-packages\mysql\connector\abstracts.py", line 1604, in connect
+    self._open_connection()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Vinic\AppData\Local\Programs\Python\Python315\Lib\site-packages\mysql\connector\connection.py", line 411, in _open_connection
+    raise err
+  File "C:\Users\Vinic\AppData\Local\Programs\Python\Python315\Lib\site-packages\mysql\connector\connection.py", line 382, in _open_connection
+    self._socket.open_connection()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Vinic\AppData\Local\Programs\Python\Python315\Lib\site-packages\mysql\connector\network.py", line 806, in open_connection
+    raise InterfaceError(
+    ...<2 lines>...
+    ) from err
+mysql.connector.errors.InterfaceError: 2003: Can't connect to MySQL server on 'localhost:3306' (Errno 10061: Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente)
+2026-09-21 23:35:59,831 INFO 127.0.0.1 - - [21/Sep/2026 23:35:59] "[35m[1mGET /api/relatorio HTTP/1.1[0m" 500 -
+2026-09-21 23:36:03,928 ERROR Erro ao consultar usuarios
+Traceback (most recent call last):
+  File "C:\Users\Vinic\AppData\Local\Programs\Python\Python315\Lib\site-packages\mysql\connector\network.py", line 795, in open_connection
+    self.sock.connect(sockaddr)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Vinic\OneDrive\Área de Trabalho\CP  de Codigo\Exercicio 10(Desafio)\app_seguro.py", line 81, in buscar
+    con = db()
+  File "C:\Users\Vinic\OneDrive\Área de Trabalho\CP  de Codigo\Exercicio 10(Desafio)\app_seguro.py", line 31, in db
+    return mysql.connector.connect(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        host=DB_HOST, user=DB_USER, password=DB_PASSWORD, database=DB_NAME
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Vinic\AppData\Local\Programs\Python\Python315\Lib\site-packages\mysql\connector\pooling.py", line 323, in connect
+    return MySQLConnection(*args, **kwargs)
+  File "C:\Users\Vinic\AppData\Local\Programs\Python\Python315\Lib\site-packages\mysql\connector\connection.py", line 185, in __init__
+    self.connect(**kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Vinic\AppData\Local\Programs\Python\Python315\Lib\site-packages\mysql\connector\abstracts.py", line 1604, in connect
+    self._open_connection()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Vinic\AppData\Local\Programs\Python\Python315\Lib\site-packages\mysql\connector\connection.py", line 411, in _open_connection
+    raise err
+  File "C:\Users\Vinic\AppData\Local\Programs\Python\Python315\Lib\site-packages\mysql\connector\connection.py", line 382, in _open_connection
+    self._socket.open_connection()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Vinic\AppData\Local\Programs\Python\Python315\Lib\site-packages\mysql\connector\network.py", line 806, in open_connection
+    raise InterfaceError(
+    ...<2 lines>...
+    ) from err
+mysql.connector.errors.InterfaceError: 2003: Can't connect to MySQL server on 'localhost:3306' (Errno 10061: Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente)
+2026-09-21 23:36:03,930 INFO 127.0.0.1 - - [21/Sep/2026 23:36:03] "[35m[1mGET /api/usuarios/buscar?nome=a HTTP/1.1[0m" 500 -
+2026-09-21 23:36:05,968 INFO 127.0.0.1 - - [21/Sep/2026 23:36:05] "GET /perfil HTTP/1.1" 200 -
